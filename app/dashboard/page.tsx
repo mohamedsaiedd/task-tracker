@@ -15,7 +15,6 @@ import {
   Chip,
 } from "@mui/material";
 import Link from 'next/link';
-import { styled } from "@mui/material/styles";
 import {Header} from "@/components/layout/header";
 import { Habit } from "@/lib/types";
 import {
@@ -30,6 +29,7 @@ import {
 import {OverviewCard} from "@/components/dashboard/overview-card";
 import {DeleteHabitDialog} from "@/components/habits/delete-habit-dialog";
 import { useRouter } from "next/navigation";
+import { useUser } from '@auth0/nextjs-auth0';
 
 
 export default function DashboardPage() {
@@ -46,7 +46,6 @@ export default function DashboardPage() {
       setHabits(JSON.parse(storedHabits));
     }
   }, []);
-
 
   const handleHabitComplete = (habit: Habit) => {
     const updatedHabits = habits.map(h => 
@@ -84,7 +83,7 @@ export default function DashboardPage() {
   const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
     setCurrentTab(newValue);
   };
-
+ 
   const filteredHabits = React.useMemo(() => {
     if (currentTab === "completed") {
       return habits.filter((h) => h.completed);
@@ -94,10 +93,11 @@ export default function DashboardPage() {
     }
     return habits;
   }, [habits, currentTab]);
+  const { user , isLoading } = useUser()
 
   return (
     <>
-      <Header /> 
+      <Header user={user} /> 
       <Box sx={{ py: 6, px: { xs: 3, md: 6 }, maxWidth: '1400px', mx: 'auto' }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 6 }}>
           <Box>

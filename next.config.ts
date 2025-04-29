@@ -1,11 +1,7 @@
-module.exports = {
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/dashboard',
-        permanent: true,
-      },
-    ];
-  },
-};
+const nextConfig = {
+    images: {
+      domains: ['lh3.googleusercontent.com'], // Add this line
+    },
+  };
+  
+  module.exports = nextConfig;
