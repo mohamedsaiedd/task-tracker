@@ -9,7 +9,7 @@ export default function CreateHabit() {
   return (
     <>
         <Header /> 
-        <Box sx={{ py: 6, px: { xs: 3, md: 6 }, maxWidth: '1400px', mx: 'auto' }}>
+        <Box  sx={{ py: 6, px: { xs: 3, md: 6 }, maxWidth: '1400px', mx: 'auto' }}>
             <Typography variant="h4" component="h1" gutterBottom>
                 Add a New Habit
             </Typography>
