@@ -48,7 +48,7 @@ export function OverviewCard({
           {habits && habits.length > 0 && (
             <Box mt={2} display="flex" flexWrap="wrap" gap={1}>
               {habits.map((habit) => (
-                <Chip key={habit.id} label={habit.name} variant={habit.variant} size="small" color={habit.chipColor}   />
+                <Chip key={habit.id} label={habit.name} size="small"   />
               ))}
             </Box>
           )}
