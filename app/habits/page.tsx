@@ -1,9 +1,6 @@
 "use client"
 
-import EditHabitPage from '@/components/habits/habit-edit'
-import { Header } from '@/components/layout/header'
 import { Box, Button, Card, Grid, CardActions, CardContent, Chip, Typography } from '@mui/material'
-import { Link } from 'lucide-react'
 import React, { useEffect } from 'react'
 
 export default function AllHibts() {

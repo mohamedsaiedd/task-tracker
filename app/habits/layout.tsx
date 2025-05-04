@@ -8,7 +8,7 @@ export default function RootLayout({
 }: {
     children: React.ReactNode;
 }) {
-const { user, isLoading } = useUser()
+const { user } = useUser()
 
     return (
         <>

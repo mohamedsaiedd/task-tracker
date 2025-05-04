@@ -14,14 +14,14 @@ export interface Habit {
   completionRate: number;
 }
 
+
 export interface User {
-  id?: string;
-  email_verified: boolean
-  email: string;
-  name: string;
-  picture: string;
-  nickname: string;
-  sub: string
+  email_verified?: boolean;
+  email?: string;
+  name?: string;
+  picture?: string;
+  nickname?: string;
+  sub?: string;
 }
 
 export type FilterType = 'all' | 'completed' | 'pending' | string;
